@@ -1,12 +1,11 @@
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 //
-//           Script MC_pieMenu.js v0.0.1
+//           Script AP_piemenus.js v0.0.1
 //
-//     This script shows a pie menu example using openHarmony.
-//
-//		written by Mathieu Chaptel m.chaptel@gmail.com
-//		Customised for multiple menus by Adam Phillips
+//     This script creates category pie menus 
+// 		Written by APhillips based on original piemenu written 
+//		by Mathieu Chaptel m.chaptel@gmail.com
 //
 //   This script is made available under the Mozilla Public license 2.0.
 //   https://www.mozilla.org/en-US/MPL/2.0/

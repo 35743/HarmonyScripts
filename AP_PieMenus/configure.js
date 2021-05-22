@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 //
-//           Script MC_pieMenu.js v0.0.1
+//           Script AP_piemenus.js v0.0.1
 //
 //     This script creates a shortcut to the pie menu.
 //
@@ -18,23 +18,23 @@ function configure(packageFolder, packageName) {
 	
 //	Node view piemenu		////////////////////
   var nodepieShortcutID = "NodePie_AP_PieMenu";
-  var nodepieLaunchCommand = 'AP_nodePiemenu in ' + specialFolders.userScripts + "/packages/AP_PieMenus/MC_piemenus_AP.js";
+  var nodepieLaunchCommand = 'AP_nodePiemenu in ' + specialFolders.userScripts + "/packages/AP_PieMenus/AP_piemenus.js";
 
 //	Paint tools piemenu		////////////////////
   var paintpieShortcutID = "PaintPie_AP_PieMenu";
-  var paintpieLaunchCommand = 'AP_paintPiemenu in ' + specialFolders.userScripts + "/packages/AP_PieMenus/MC_piemenus_AP.js";
+  var paintpieLaunchCommand = 'AP_paintPiemenu in ' + specialFolders.userScripts + "/packages/AP_PieMenus/AP_piemenus.js";
   
 //	Select tools piemenu		////////////////////
   var selectpieShortcutID = "SelectPie_AP_PieMenu";
-  var selectpieLaunchCommand = 'AP_selectPiemenu in ' + specialFolders.userScripts + "/packages/AP_PieMenus/MC_piemenus_AP.js";
+  var selectpieLaunchCommand = 'AP_selectPiemenu in ' + specialFolders.userScripts + "/packages/AP_PieMenus/AP_piemenus.js";
   
 //	Select tools piemenu		////////////////////
   var animpieShortcutID = "AnimPie_AP_Piemenu";
-  var animpieLaunchCommand = 'AP_animatePiemenu in ' + specialFolders.userScripts + "/packages/AP_PieMenus/MC_piemenus_AP.js";
+  var animpieLaunchCommand = 'AP_animatePiemenu in ' + specialFolders.userScripts + "/packages/AP_PieMenus/AP_piemenus.js";
  
  //	Select tools piemenu		////////////////////
   var fxpieShortcutID = "FXPie_AP_Piemenu";
-  var fxpieLaunchCommand = 'AP_effectsPiemenu in ' + specialFolders.userScripts + "/packages/AP_PieMenus/MC_piemenus_AP.js";
+  var fxpieLaunchCommand = 'AP_effectsPiemenu in ' + specialFolders.userScripts + "/packages/AP_PieMenus/AP_piemenus.js";
 
 
 //	Create Individual Pie Shortcuts
