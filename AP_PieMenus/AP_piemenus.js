@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 //
-//           Script AP_piemenus.js v0.0.1
+//           Script AP_piemenus.js v0.0.2
 //
 //     This script creates category pie menus 
 // 		Written by APhillips based on original piemenu written 
@@ -92,16 +92,25 @@ function AP_paintPiemenu(){
   // this can be helpful to visually identify the different pie menus
   var backgroundGradient = new QRadialGradient (new QPointF(menu.center.x, menu.center.y), menu.maxRadius);
   var menuBg = menu.backgroundColor;
-  backgroundGradient.setColorAt(1, new QColor(menuBg.red(), menuBg.green(), menuBg.blue(), 230));
-  backgroundGradient.setColorAt(0, menuBg);
-
+ 
+  backgroundGradient.setColorAt(1, new QColor(80, 32, 0, 255));
+  backgroundGradient.setColorAt(0.66, new QColor(61, 24, 0, 255));			//outer ring
+  backgroundGradient.setColorAt(.655, new QColor(255, 255, 0, 255));		//divider
+  backgroundGradient.setColorAt(.65, new QColor(210, 97, 0, 120));			//inner disc
+  backgroundGradient.setColorAt(0, new QColor(210, 97, 0, 33));
+  
+  
   var sliceGradient = new QRadialGradient (new QPointF(menu.center.x, menu.center.y), menu.maxRadius);
   var menuColor = menu.sliceColor;
-  sliceGradient.setColorAt(1, new QColor(255, 120, 0, 255));
-  sliceGradient.setColorAt(0, new QColor(120, 55, 0, 255));
+  sliceGradient.setColorAt(1, new QColor(255, 255, 220, 255));              //cap
+  sliceGradient.setColorAt(.99, new QColor(255, 78, 0, 120));               //outer band
+  sliceGradient.setColorAt(.66, new QColor(255, 78, 0, 120));               //outer band
+  sliceGradient.setColorAt(.655, new QColor(255, 255, 220, 255));           //divider
+  sliceGradient.setColorAt(.65, new QColor(255, 78, 0, 120));               //outer band
+  sliceGradient.setColorAt(0, new QColor(255, 180, 0, 120));                //inner wedge
 
   menu.backgroundColor = backgroundGradient;
-  menu.sliceColor = sliceGradient
+  menu.sliceColor = sliceGradient;
 
   // we show it!
   menu.show();
@@ -179,15 +188,21 @@ function AP_nodePiemenu(){
   // this can be helpful to visually identify the different pie menus
   var backgroundGradient = new QRadialGradient (new QPointF(menu.center.x, menu.center.y), menu.maxRadius);
   var menuBg = menu.backgroundColor;
-  backgroundGradient.setColorAt(1, new QColor(menuBg.red(), menuBg.green(), menuBg.blue(), 230));
-  backgroundGradient.setColorAt(0, menuBg);
-
+  backgroundGradient.setColorAt(1, new QColor(0, 24, 90, 255));
+  backgroundGradient.setColorAt(0.66, new QColor(0, 14, 53, 255));		//outer ring
+  backgroundGradient.setColorAt(.655, new QColor(0, 233, 255, 255));	//divider
+  backgroundGradient.setColorAt(.65, new QColor(0, 55, 210, 120));		//inner disc
+  backgroundGradient.setColorAt(0, new QColor(0, 55, 210, 33));
+  
+  
   var sliceGradient = new QRadialGradient (new QPointF(menu.center.x, menu.center.y), menu.maxRadius);
   var menuColor = menu.sliceColor;
-  sliceGradient.setColorAt(1, new QColor(0, 80, 150, 255));
-  sliceGradient.setColorAt(0.66, new QColor(0, 0, 66, 200));
-  sliceGradient.setColorAt(0.33, new QColor(0, 0, 120, 200));
-  sliceGradient.setColorAt(0, new QColor(0, 40, 80, 255));
+  sliceGradient.setColorAt(1, new QColor(120, 233, 255, 255));			//cap
+  sliceGradient.setColorAt(.99, new QColor(0, 112, 202, 120));			//outer band
+  sliceGradient.setColorAt(.66, new QColor(0, 112, 202, 120));			//outer band
+  sliceGradient.setColorAt(.655, new QColor(120, 233, 255, 255));		//divider
+  sliceGradient.setColorAt(.65, new QColor(0, 112, 202, 120));			//outer band
+  sliceGradient.setColorAt(0, new QColor(66, 220, 255, 120));			//inner wedge
 
   menu.backgroundColor = backgroundGradient;
   menu.sliceColor = sliceGradient
@@ -267,15 +282,24 @@ function AP_selectPiemenu(){
 
   // configurating the look of it by adding gradients (any type supported by QBrush can be used)
   // this can be helpful to visually identify the different pie menus
-  var backgroundGradient = new QRadialGradient (new QPointF(menu.center.x, menu.center.y), menu.maxRadius * 2);
+  var backgroundGradient = new QRadialGradient (new QPointF(menu.center.x, menu.center.y), menu.maxRadius);
   var menuBg = menu.backgroundColor;
-  backgroundGradient.setColorAt(1, new QColor(menuBg.red(), menuBg.green(), menuBg.blue(), 230));
-  backgroundGradient.setColorAt(0, menuBg);
-
+  
+  backgroundGradient.setColorAt(1, new QColor(66, 15, 5, 255));
+  backgroundGradient.setColorAt(0.66, new QColor(46, 10, 5, 255));		//outer ring 
+  backgroundGradient.setColorAt(.655, new QColor(255, 233, 255, 255));	//divider
+  backgroundGradient.setColorAt(.65, new QColor(138, 30, 16, 120));		//inner disc
+  backgroundGradient.setColorAt(0, new QColor(138, 30, 16, 33));
+  
+  
   var sliceGradient = new QRadialGradient (new QPointF(menu.center.x, menu.center.y), menu.maxRadius);
   var menuColor = menu.sliceColor;
-  sliceGradient.setColorAt(1, new QColor(150, 11, 0, 255));
-  sliceGradient.setColorAt(0, new QColor(80, 6, 0, 255));
+  sliceGradient.setColorAt(1, new QColor(120, 233, 255, 255));			//cap
+  sliceGradient.setColorAt(.99, new QColor(164, 37, 19, 120));			//outer band
+  sliceGradient.setColorAt(.66, new QColor(164, 37, 19, 120));			//outer band
+  sliceGradient.setColorAt(.655, new QColor(120, 233, 255, 255));		//divider
+  sliceGradient.setColorAt(.65, new QColor(164, 37, 19, 120));			//outer band
+  sliceGradient.setColorAt(0, new QColor(249, 55, 29, 120));			//inner wedge
 
   menu.backgroundColor = backgroundGradient;
   menu.sliceColor = sliceGradient
@@ -353,15 +377,23 @@ function AP_animatePiemenu(){
 
   // configurating the look of it by adding gradients (any type supported by QBrush can be used)
   // this can be helpful to visually identify the different pie menus
-  var backgroundGradient = new QRadialGradient (new QPointF(menu.center.x, menu.center.y), menu.maxRadius * 2);
+  var backgroundGradient = new QRadialGradient (new QPointF(menu.center.x, menu.center.y), menu.maxRadius);
   var menuBg = menu.backgroundColor;
-  backgroundGradient.setColorAt(1, new QColor(menuBg.red(), menuBg.green(), menuBg.blue(), 230));
-  backgroundGradient.setColorAt(0, menuBg);
-
+  backgroundGradient.setColorAt(1, new QColor(0, 42, 17, 255));
+  backgroundGradient.setColorAt(0.66, new QColor(0, 32, 3, 255));		//outer ring
+  backgroundGradient.setColorAt(.655, new QColor(0, 233, 255, 255));	//divider
+  backgroundGradient.setColorAt(.65, new QColor(0, 122, 11, 120));		//inner disc
+  backgroundGradient.setColorAt(0, new QColor(0, 122, 11, 33));0
+  
+  
   var sliceGradient = new QRadialGradient (new QPointF(menu.center.x, menu.center.y), menu.maxRadius);
   var menuColor = menu.sliceColor;
-  sliceGradient.setColorAt(1, new QColor(0, 150, 0, 255));
-  sliceGradient.setColorAt(0, new QColor(0, 30, 0, 255));
+  sliceGradient.setColorAt(1, new QColor(120, 233, 255, 255));			//cap
+  sliceGradient.setColorAt(.99, new QColor(93, 139, 4, 120));			//outer band
+  sliceGradient.setColorAt(.66, new QColor(93, 139, 4, 120));			//outer band
+  sliceGradient.setColorAt(.655, new QColor(120, 233, 255, 255));		//divider
+  sliceGradient.setColorAt(.65, new QColor(93, 139, 4, 120));			//outer band
+  sliceGradient.setColorAt(0, new QColor(0, 247, 22, 120));				//inner wedge
 
   menu.backgroundColor = backgroundGradient;
   menu.sliceColor = sliceGradient
@@ -471,15 +503,23 @@ function AP_effectsPiemenu(){
 
   // configurating the look of it by adding gradients (any type supported by QBrush can be used)
   // this can be helpful to visually identify the different pie menus
-  var backgroundGradient = new QRadialGradient (new QPointF(menu.center.x, menu.center.y), menu.maxRadius * 2);
+  var backgroundGradient = new QRadialGradient (new QPointF(menu.center.x, menu.center.y), menu.maxRadius);
   var menuBg = menu.backgroundColor;
-  backgroundGradient.setColorAt(1, new QColor(menuBg.red(), menuBg.green(), menuBg.blue(), 230));
-  backgroundGradient.setColorAt(0, menuBg);
-
+  backgroundGradient.setColorAt(1, new QColor(44, 35, 79, 255));
+  backgroundGradient.setColorAt(0.66, new QColor(29, 23, 52, 255));		//outer ring
+  backgroundGradient.setColorAt(.655, new QColor(240, 120, 255, 255));	//divider
+  backgroundGradient.setColorAt(.65, new QColor(78, 63, 143, 120));		//inner disc
+  backgroundGradient.setColorAt(0, new QColor(78, 63, 143, 33));
+  
+  
   var sliceGradient = new QRadialGradient (new QPointF(menu.center.x, menu.center.y), menu.maxRadius);
   var menuColor = menu.sliceColor;
-  sliceGradient.setColorAt(1, new QColor(165, 0, 255, 255));
-  sliceGradient.setColorAt(0, new QColor(30, 0, 99, 255));
+  sliceGradient.setColorAt(1, new QColor(255, 222, 255, 255));			//cap
+  sliceGradient.setColorAt(.99, new QColor(88, 70, 163, 120));			//outer band
+  sliceGradient.setColorAt(.66, new QColor(88, 70, 163, 120));			//outer band
+  sliceGradient.setColorAt(.655, new QColor(255, 222, 255, 255));		//divider
+  sliceGradient.setColorAt(.65, new QColor(88, 70, 163, 120));			//outer band
+  sliceGradient.setColorAt(0, new QColor(196, 117, 255, 120));			//inner wedge
 
   menu.backgroundColor = backgroundGradient;
   menu.sliceColor = sliceGradient
