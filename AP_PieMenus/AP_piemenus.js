@@ -111,8 +111,7 @@ function AP_paintPiemenu(){
 
   menu.backgroundColor = backgroundGradient;
   menu.sliceColor = sliceGradient;
-
-  // we show it!
+  UiLoader.setSvgIcon(menu.button, specialFolders.resource + "/icons/drawingtool/paint.svg");
   menu.show();
 }
 
@@ -205,9 +204,8 @@ function AP_nodePiemenu(){
   sliceGradient.setColorAt(0, new QColor(66, 220, 255, 120));			//inner wedge
 
   menu.backgroundColor = backgroundGradient;
-  menu.sliceColor = sliceGradient
-
-  // we show it!
+  menu.sliceColor = sliceGradient;
+  menu.button.icon = new QIcon(specialFolders.userScripts + "/packages/AP_PieMenus/icons/AP_nodeico.png");
   menu.show();
 }
 
@@ -225,10 +223,10 @@ function AP_selectPiemenu(){
 	))
 
   mainWidgets.push(new $.oActionButton(
-      "onActionChooseContourEditorTool()",
-      "cameraView",
-      "Contour",
-      specialFolders.resource + "/icons/drawingtool/contoureditor.svg"
+      "paste()",
+      "selection",
+      "Paste",
+      specialFolders.resource + "/icons/edit/paste.svg"
 	))
 	
   mainWidgets.push(new $.oActionButton(
@@ -260,20 +258,18 @@ function AP_selectPiemenu(){
 	))
 	
   mainWidgets.push(new $.oActionButton(
+      "onActionChooseContourEditorTool()",
+      "cameraView",
+      "Contour",
+      specialFolders.resource + "/icons/drawingtool/contoureditor.svg"
+	))
+	
+  mainWidgets.push(new $.oActionButton(
       "cut()",
       "selection",
       "Cut",
-      specialFolders.resource + "/icons/edit/delete.svg"
+      specialFolders.resource + "/icons/edit/cut.svg"
 	))
-	
-	
-  mainWidgets.push(new $.oActionButton(
-      "onActionChooseRepositionAllDrawingsTool()",
-      "sceneUI",
-      "AllDrawings",
-      specialFolders.resource + "/icons/toolproperties/applytoallframes.svg"
-	))	
-	
 
   // we initialise our main menu. The numerical values are for the minimum and maximum angle of the
   // circle in multiples of Pi. Going counterClockwise, 0 is right, 1 is left, -0.5 is the bottom from the right,
@@ -302,9 +298,8 @@ function AP_selectPiemenu(){
   sliceGradient.setColorAt(0, new QColor(249, 55, 29, 120));			//inner wedge
 
   menu.backgroundColor = backgroundGradient;
-  menu.sliceColor = sliceGradient
-
-  // we show it!
+  menu.sliceColor = sliceGradient;
+  UiLoader.setSvgIcon(menu.button, specialFolders.resource + "/icons/drawingtool/contoureditor.svg");
   menu.show();
 }
 
@@ -396,9 +391,8 @@ function AP_animatePiemenu(){
   sliceGradient.setColorAt(0, new QColor(0, 247, 22, 120));				//inner wedge
 
   menu.backgroundColor = backgroundGradient;
-  menu.sliceColor = sliceGradient
-
-  // we show it!
+  menu.sliceColor = sliceGradient;
+  UiLoader.setSvgIcon(menu.button, specialFolders.resource + "/icons/cameratoolbar/keyframeanimatedmode.svg");
   menu.show();
 }
 
@@ -522,8 +516,7 @@ function AP_effectsPiemenu(){
   sliceGradient.setColorAt(0, new QColor(196, 117, 255, 120));			//inner wedge
 
   menu.backgroundColor = backgroundGradient;
-  menu.sliceColor = sliceGradient
-
-  // we show it!
+  menu.sliceColor = sliceGradient;
+  UiLoader.setSvgIcon(menu.button, specialFolders.resource + "/icons/timeline/effect.svg");
   menu.show();
 }
