@@ -12,7 +12,7 @@
       "repository": "https://github.com/35743/HarmonyScripts/",
       "isPackage": true,
       "files": [
-        "AP_PieMenus/"
+        "AP_PieMenus/",
       ],
       "keywords": [
         "openHarmony",
