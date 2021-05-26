@@ -392,7 +392,7 @@ function AP_animatePiemenu(){
 
   menu.backgroundColor = backgroundGradient;
   menu.sliceColor = sliceGradient;
-  UiLoader.setSvgIcon(menu.button, specialFolders.resource + "/icons/cameratoolbar/keyframeanimatedmode.svg");
+  menu.button.icon = new QIcon(specialFolders.userScripts + "/packages/AP_PieMenus/icons/AP_animico.png");
   menu.show();
 }
 
