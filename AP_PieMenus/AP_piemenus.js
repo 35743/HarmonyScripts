@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 //
-//           Script AP_piemenus.js v0.0.2
+//           Script AP_piemenus.js v1.0.3
 //
 //     This script creates category pie menus 
 // 		Written by APhillips based on original piemenu written 
@@ -53,13 +53,13 @@ function AP_paintPiemenu(){
       "Paint Behind",
       specialFolders.resource + "/icons/toolproperties/draw_behind.svg"
 	))
-	  
+	
   mainWidgets.push(new $.oActionButton(
-		"onActionChooseDropperTool()",
-		"drawingView",
-		"Dropper",
-		specialFolders.resource + "/icons/colour/dropper.svg"
-	  ))
+		"onActionToggleStickyPaint()",
+		"paletteView",
+		"Protect Colour",
+		specialFolders.resource + "/icons/toolproperties/protectcl.svg"
+	  ))	
 	
   mainWidgets.push(new $.oActionButton(
       "onActionChoosePaintToolInRepaintMode()",
@@ -128,26 +128,25 @@ function AP_nodePiemenu(){
       specialFolders.resource + "/icons/modulelibrary/composite.png"
 	))
 	
-	
   mainWidgets.push(new $.oActionButton(
-      "onActionCreateDisplay()",
+		"onActionSelCreateGroupWithComposite()",
+		"Node View",
+		"GroupComp",
+		specialFolders.resource + "/icons/drawing/group.svg"
+	  )) 
+	  
+  mainWidgets.push(new $.oActionButton(
+      "onActionDuplicateElement()",
       "Node View",
-      "Display",
-      specialFolders.resource + "/icons/modulelibrary/display.png"
+      "Duplicate",
+      specialFolders.resource + "/icons/xsheet/duplicatecolumn.svg"
 	))
 	
   mainWidgets.push(new $.oActionButton(
-		"onActionAddVectorElement()",
-		"timelineView",
-		"Empty Drawing",
-		specialFolders.resource + "/icons/timeline/layer.svg"
-	  ))
-	  
-  mainWidgets.push(new $.oActionButton(
-      "onActionToggleCableCutter()",
+      "onActionEnterGroup()",
       "Node View",
-      "Cable Cutter",
-      specialFolders.resource + "/icons/network/cable_cutter.svg"
+      "Enter Group",
+      specialFolders.resource + "/icons/network/move2parentgroup.svg"
 	))
 	
   mainWidgets.push(new $.oActionButton(
@@ -157,20 +156,21 @@ function AP_nodePiemenu(){
       specialFolders.resource + "/icons/timeline/addpeg.svg"
 	))
 	
-
   mainWidgets.push(new $.oActionButton(
-      "onActionAddCameraElement()",
-      "timelineView",
-      "Camera",
-      specialFolders.resource + "/icons/timeline/addcamera.svg"
+      "onActionUpToParent()",
+      "Node View",
+      "Exit Group",
+      specialFolders.resource + "/icons/network/uptoparent.svg"
 	))
-  mainWidgets.push(new $.oActionButton(
-		"onActionSelCreateGroupWithComposite()",
-		"Node View",
-		"GroupComp",
-		specialFolders.resource + "/icons/drawing/group.svg"
-	  )) 
+	
 	  	  
+  mainWidgets.push(new $.oActionButton(
+		"onActionAddVectorElement()",
+		"timelineView",
+		"Empty Drawing",
+		specialFolders.resource + "/icons/timeline/layer.svg"
+	  ))
+	  
   mainWidgets.push(new $.oActionButton(
 		"onActionSelMergeInto()",
 		"Node View",
@@ -216,10 +216,10 @@ function AP_selectPiemenu(){
   // add some buttons that activate tools and tool actions
   
   mainWidgets.push(new $.oActionButton(
-      "onActionChooseSelectToolInColorMode()",
-      "scene",
-      "Colour",
-      specialFolders.resource + "/icons/toolproperties/selectbycolour.svg"
+      "copy()",
+      "selection",
+      "Copy",
+      specialFolders.resource + "/icons/edit/copy.svg"
 	))
 
   mainWidgets.push(new $.oActionButton(
@@ -258,10 +258,10 @@ function AP_selectPiemenu(){
 	))
 	
   mainWidgets.push(new $.oActionButton(
-      "onActionChooseContourEditorTool()",
-      "cameraView",
-      "Contour",
-      specialFolders.resource + "/icons/drawingtool/contoureditor.svg"
+      "deleteSelection()",
+      "selection",
+      "Delete",
+      specialFolders.resource + "/icons/edit/delete.svg"
 	))
 	
   mainWidgets.push(new $.oActionButton(
@@ -346,7 +346,7 @@ function AP_animatePiemenu(){
 	
   mainWidgets.push(new $.oActionButton(
     "onActionAutoLightTable()",
-    "drawingView",
+    "cameraView",
     "Light Table",
     specialFolders.resource + "/icons/drawingtool/lighttable.png"
 	))	
@@ -518,5 +518,110 @@ function AP_effectsPiemenu(){
   menu.backgroundColor = backgroundGradient;
   menu.sliceColor = sliceGradient;
   UiLoader.setSvgIcon(menu.button, specialFolders.resource + "/icons/timeline/effect.svg");
+  menu.show();
+}
+
+
+function AP_timelinePiemenu(){
+  // we start a list of widgets to display in our pieMenu.
+  
+  var mainWidgets = [];
+  // add some buttons that activate tools and tool actions
+  
+/* 
+  mainWidgets.push(new $.oActionButton(
+	  "onActionToggleVelocityEditor()",
+	  "scene",
+	  "Velocity",
+	  specialFolders.resource + "/icons/functioneditor/velocity.svg"
+	))
+*/	
+  mainWidgets.push(new $.oActionButton(
+	  "onActionReplaceDrawing()",
+	  "timelineView",
+	  "Empty",
+	  specialFolders.resource + "/icons/xsheet/createemptydrawing.svg"
+	))	
+
+  mainWidgets.push(new $.oActionButton(
+	  "onActionExtendExposure()",
+	  "timelineView",
+	  "Extend",
+	  specialFolders.resource + "/icons/old/extend_exposure.svg"
+	))
+  
+  mainWidgets.push(new $.oActionButton(
+	  "onActionMainPlay()",
+	  "timelineView",
+	  "Play",
+	  specialFolders.resource + "/icons/play/play.svg"
+	))
+
+  mainWidgets.push(new $.oActionButton(
+	  "onActionMainGotoLastFrame()",
+	  "sceneUI",
+	  "Last",
+	  specialFolders.resource + "/icons/play/lastframe.svg"
+	))
+	
+  mainWidgets.push(new $.oActionButton(
+	  "onActionDuplicateDrawing()",
+	  "cameraView",
+	  "Duplicate",
+	  specialFolders.resource + "/icons/xsheet/duplicatedrawing.svg"
+	))
+
+  mainWidgets.push(new $.oActionButton(
+	  "onActionMainGotoFirstFrame()",
+	  "sceneUI",
+	  "First",
+	  specialFolders.resource + "/icons/play/firstframe.svg"
+	))
+	
+  mainWidgets.push(new $.oActionButton(
+	  "onActionMainToggleLoopPlay()",
+	  "timelineView",
+	  "Loop",
+	  specialFolders.resource + "/icons/play/loop.svg"
+	))
+
+  mainWidgets.push(new $.oActionButton(
+	  "onActionRemoveBlankFrame()",
+	  "timelineView",
+	  "Clear",
+	  specialFolders.resource + "/icons/xsheet/clearexposure.svg"
+	))
+	
+  
+  // we initialise our main menu. The numerical values are for the minimum and maximum angle of the
+  // circle in multiples of Pi. Going counterClockwise, 0 is right, 1 is left, -0.5 is the bottom from the right,
+  // and 1.5 is the bottom from the left side. 0.5 is the top of the circle.
+  var menu = new $.oPieMenu("menu", mainWidgets, false, -0.635, 1.365);
+
+  // configurating the look of it by adding gradients (any type supported by QBrush can be used)
+  // this can be helpful to visually identify the different pie menus
+  var backgroundGradient = new QRadialGradient (new QPointF(menu.center.x, menu.center.y), menu.maxRadius);
+  var menuBg = menu.backgroundColor;
+  backgroundGradient.setColorAt(1, new QColor(0, 60, 70, 255));  		//outer ring outside
+  backgroundGradient.setColorAt(0.8, new QColor(0, 60, 70, 255));  		//outer ring outside
+  backgroundGradient.setColorAt(0.66, new QColor(0, 65, 80, 255));	//outer ring inside
+  backgroundGradient.setColorAt(.655, new QColor(220, 255, 255, 255));	//divider
+  backgroundGradient.setColorAt(.65, new QColor(19, 243, 255, 30));		//inner disc outside
+  backgroundGradient.setColorAt(0, new QColor(19, 243, 255, 255));		//inner disc inside
+  
+  
+  var sliceGradient = new QRadialGradient (new QPointF(menu.center.x, menu.center.y), menu.maxRadius);
+  var menuColor = menu.sliceColor;
+  sliceGradient.setColorAt(1, new QColor(0, 255, 255, 255));			//cap
+  sliceGradient.setColorAt(.99, new QColor(0, 120, 80, 120));			//outer band outside
+  sliceGradient.setColorAt(.79, new QColor(0, 60, 70, 255));			//outer band inside
+  sliceGradient.setColorAt(.66, new QColor(0, 255, 255, 255));			//outer band inside
+  sliceGradient.setColorAt(.655, new QColor(255, 255, 150, 255));		//divider
+  sliceGradient.setColorAt(.65, new QColor(233, 220, 255, 120));		//outer band
+  sliceGradient.setColorAt(0, new QColor(175, 255, 255, 120));			//inner wedge
+
+  menu.backgroundColor = backgroundGradient;
+  menu.sliceColor = sliceGradient;
+  menu.button.icon = new QIcon(specialFolders.userScripts + "/packages/AP_PieMenus/icons/AP_timeico.png");
   menu.show();
 }

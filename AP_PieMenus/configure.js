@@ -27,13 +27,18 @@ function configure(packageFolder, packageName) {
   var selectpieShortcutID = "SelectPie_AP_PieMenu";
   var selectpieLaunchCommand = 'AP_selectPiemenu in ' + specialFolders.userScripts + "/packages/AP_PieMenus/AP_piemenus.js";
   
-//	Select tools piemenu		////////////////////
+//	Anim tools piemenu		////////////////////
   var animpieShortcutID = "AnimPie_AP_Piemenu";
   var animpieLaunchCommand = 'AP_animatePiemenu in ' + specialFolders.userScripts + "/packages/AP_PieMenus/AP_piemenus.js";
  
- //	Select tools piemenu		////////////////////
+ //	Effects nodes piemenu		////////////////////
   var fxpieShortcutID = "FXPie_AP_Piemenu";
   var fxpieLaunchCommand = 'AP_effectsPiemenu in ' + specialFolders.userScripts + "/packages/AP_PieMenus/AP_piemenus.js";
+
+ //	Timeline tools piemenu		////////////////////
+  var timelinepieShortcutID = "TimelinePie_AP_Piemenu";
+  var timelinepieLaunchCommand = 'AP_timelinePiemenu in ' + specialFolders.userScripts + "/packages/AP_PieMenus/AP_piemenus.js";
+  
 
 
 //	Create Individual Pie Shortcuts
@@ -41,7 +46,7 @@ function configure(packageFolder, packageName) {
     id: nodepieShortcutID,
     text: "Node Pie Menu",
     action: nodepieLaunchCommand,
-    longDesc: "Opens a pie menu for some common Node View tools and tasks.\nNOTE: Cable Cutter is available only in Harmony Premium 20 or higher",
+    longDesc: "Opens a pie menu for some common Node View tools and tasks.\nNOTE: Cable Cutter is removed in 1.0.3",
     categoryId: "PieMenu",
     categoryText: "Pie Menu"
   }
@@ -81,12 +86,22 @@ function configure(packageFolder, packageName) {
     categoryId: "PieMenu",
     categoryText: "Pie Menu"
   }
-
+  
+ var timelinepieShortcut = {
+    id: timelinepieShortcutID,
+    text: "Timeline Pie Menu",
+    action: timelinepieLaunchCommand,
+    longDesc: "Opens pie menu for some common timeline operations:\nPlay, go to first & last frames, loop playback\nExtend Exposure of selected drawing to current frame\nDuplicate drawing\nClear and Pull\nAdd Empty drawing",
+    categoryId: "PieMenu",
+    categoryText: "Pie Menu"
+  }
+  
   ScriptManager.addShortcut(nodepieShortcut);
   ScriptManager.addShortcut(paintpieShortcut);
   ScriptManager.addShortcut(selectpieShortcut);
   ScriptManager.addShortcut(animpieShortcut);
   ScriptManager.addShortcut(fxpieShortcut);
+  ScriptManager.addShortcut(timelinepieShortcut);
   
 }
 
